@@ -5,12 +5,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Manage
-      <small>Products</small>
+      Редактировать
+      <small>Товары</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Products</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+      <li class="active">Товары</li>
     </ol>
   </section>
 
@@ -35,28 +35,28 @@
         <?php endif; ?>
 
         <?php if(in_array('createProduct', $user_permission)): ?>
-          <a href="<?php echo base_url('products/create') ?>" class="btn btn-primary">Add Product</a>
+          <a href="<?php echo base_url('products/create') ?>" class="btn btn-primary">Добавить товар</a>
           <br /> <br />
         <?php endif; ?>
 
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Manage Products</h3>
+            <h3 class="box-title">Редактировать товары</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Image</th>
-                <th>SKU</th>
-                <th>Product Name</th>
-                <th>Price</th>
-                <th>Qty</th>
-                <th>Store</th>
-                <th>Availability</th>
+                <th>Изображение</th>
+                <th>Штрихкод</th>
+                <th>Наименование товара</th>
+                <th>Цена</th>
+                <th>Количество</th>
+                <th>Магазин</th>
+                <th>Доступность</th>
                 <?php if(in_array('updateProduct', $user_permission) || in_array('deleteProduct', $user_permission)): ?>
-                  <th>Action</th>
+                  <th>Действие</th>
                 <?php endif; ?>
               </tr>
               </thead>
@@ -89,11 +89,11 @@
 
       <form role="form" action="<?php echo base_url('products/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
-          <p>Do you really want to remove?</p>
+          <p>Вы действительно хотите удалить?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-primary">Удалить</button>
         </div>
       </form>
 
@@ -116,7 +116,10 @@ $(document).ready(function() {
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
     'ajax': base_url + 'products/fetchProductData',
-    'order': []
+    'order': [],
+    'language': {
+        'url': 'https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json'
+    }
   });
 
 });

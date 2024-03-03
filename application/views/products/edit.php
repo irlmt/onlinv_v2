@@ -5,12 +5,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Manage
-      <small>Products</small>
+      Редактировать
+      <small>Товары</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Products</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+      <li class="active">Товары</li>
     </ol>
   </section>
 
@@ -37,7 +37,7 @@
 
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Edit Product</h3>
+            <h3 class="box-title">Редактировать товар</h3>
           </div>
           <!-- /.box-header -->
           <form role="form" action="<?php base_url('users/update') ?>" method="post" enctype="multipart/form-data">
@@ -46,12 +46,12 @@
                 <?php echo validation_errors(); ?>
 
                 <div class="form-group">
-                  <label>Image Preview: </label>
+                  <label>Предпросмотр изображения: </label>
                   <img src="<?php echo base_url() . $product_data['image'] ?>" width="150" height="150" class="img-circle">
                 </div>
 
                 <div class="form-group">
-                  <label for="product_image">Update Image</label>
+                  <label for="product_image">Обновить изображение</label>
                   <div class="kv-avatar">
                       <div class="file-loading">
                           <input id="product_image" name="product_image" type="file">
@@ -60,29 +60,28 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="product_name">Product name</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name" value="<?php echo $product_data['name']; ?>"  autocomplete="off"/>
+                  <label for="product_name">Наименование товара</label>
+                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Введите наименование товара" value="<?php echo $product_data['name']; ?>"  autocomplete="off"/>
                 </div>
 
                 <div class="form-group">
-                  <label for="sku">SKU</label>
-                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter sku" value="<?php echo $product_data['sku']; ?>" autocomplete="off" />
+                  <label for="sku">Штрихкод</label>
+                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Введите штрихкод" value="<?php echo $product_data['sku']; ?>" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
+                  <label for="price">Цена</label>
+                  <input type="text" class="form-control" id="price" name="price" placeholder="Введите цену" value="<?php echo $product_data['price']; ?>" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="qty">Qty</label>
-                  <input type="text" class="form-control" id="qty" name="qty" placeholder="Enter Qty" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
+                  <label for="qty">Количество</label>
+                  <input type="text" class="form-control" id="qty" name="qty" placeholder="Введите количество" value="<?php echo $product_data['qty']; ?>" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="description">Description</label>
-                  <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
-                  description" autocomplete="off">
+                  <label for="description">Описание</label>
+                  <textarea type="text" class="form-control" id="description" name="description" placeholder="Введите описание" autocomplete="off">
                     <?php echo $product_data['description']; ?>
                   </textarea>
                 </div>
@@ -102,7 +101,7 @@
                 <?php endif; ?>
 
                 <div class="form-group">
-                  <label for="brands">Brands</label>
+                  <label for="brands">Бренд</label>
                   <?php $brand_data = json_decode($product_data['brand_id']); ?>
                   <select class="form-control select_group" id="brands" name="brands[]" multiple="multiple">
                     <?php foreach ($brands as $k => $v): ?>
@@ -112,7 +111,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="category">Category</label>
+                  <label for="category">Категория</label>
                   <?php $category_data = json_decode($product_data['category_id']); ?>
                   <select class="form-control select_group" id="category" name="category[]" multiple="multiple">
                     <?php foreach ($category as $k => $v): ?>
@@ -122,7 +121,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="store">Store</label>
+                  <label for="store">Магазин</label>
                   <select class="form-control select_group" id="store" name="store">
                     <?php foreach ($stores as $k => $v): ?>
                       <option value="<?php echo $v['id'] ?>" <?php if($product_data['store_id'] == $v['id']) { echo "selected='selected'"; } ?> ><?php echo $v['name'] ?></option>
@@ -131,10 +130,10 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="store">Availability</label>
+                  <label for="store">Доступность</label>
                   <select class="form-control" id="availability" name="availability">
-                    <option value="1" <?php if($product_data['availability'] == 1) { echo "selected='selected'"; } ?>>Yes</option>
-                    <option value="2" <?php if($product_data['availability'] != 1) { echo "selected='selected'"; } ?>>No</option>
+                    <option value="1" <?php if($product_data['availability'] == 1) { echo "selected='selected'"; } ?>>Да</option>
+                    <option value="2" <?php if($product_data['availability'] != 1) { echo "selected='selected'"; } ?>>Нет</option>
                   </select>
                 </div>
 

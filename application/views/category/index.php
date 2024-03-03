@@ -189,7 +189,10 @@ $(document).ready(function() {
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
     'ajax': 'fetchCategoryData',
-    'order': []
+    'order': [],
+    'language': {
+        'url': 'https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json'
+    }
   });
 
   // submit the create from 

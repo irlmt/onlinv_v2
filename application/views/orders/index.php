@@ -132,7 +132,10 @@ $(document).ready(function() {
   // initialize the datatable 
   manageTable = $('#manageTable').DataTable({
     'ajax': base_url + 'orders/fetchOrdersData',
-    'order': []
+    'order': [],
+    'language': {
+        'url': 'https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json'
+    }
   });
 
 });

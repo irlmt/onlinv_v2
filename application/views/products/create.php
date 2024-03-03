@@ -61,24 +61,23 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="sku">SKU</label>
-                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter sku" autocomplete="off" />
+                  <label for="sku">Штрихкод</label>
+                  <input type="text" class="form-control" id="sku" name="sku" placeholder="Введите штрихкод" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" autocomplete="off" />
+                  <label for="price">Цена</label>
+                  <input type="text" class="form-control" id="price" name="price" placeholder="Введите цену" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="qty">Qty</label>
-                  <input type="text" class="form-control" id="qty" name="qty" placeholder="Enter Qty" autocomplete="off" />
+                  <label for="qty">Количество</label>
+                  <input type="text" class="form-control" id="qty" name="qty" placeholder="Введите количество" autocomplete="off" />
                 </div>
 
                 <div class="form-group">
-                  <label for="description">Description</label>
-                  <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter 
-                  description" autocomplete="off">
+                  <label for="description">Описание</label>
+                  <textarea type="text" class="form-control" id="description" name="description" placeholder="Введите описание" autocomplete="off">
                   </textarea>
                 </div>
 
@@ -96,7 +95,7 @@
                 <?php endif; ?>
 
                 <div class="form-group">
-                  <label for="brands">Brands</label>
+                  <label for="brands">Бренд</label>
                   <select class="form-control select_group" id="brands" name="brands[]" multiple="multiple">
                     <?php foreach ($brands as $k => $v): ?>
                       <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
@@ -105,7 +104,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="category">Category</label>
+                  <label for="category">Категория</label>
                   <select class="form-control select_group" id="category" name="category[]" multiple="multiple">
                     <?php foreach ($category as $k => $v): ?>
                       <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
@@ -114,7 +113,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="store">Store</label>
+                  <label for="store">Магазин</label>
                   <select class="form-control select_group" id="store" name="store">
                     <?php foreach ($stores as $k => $v): ?>
                       <option value="<?php echo $v['id'] ?>"><?php echo $v['name'] ?></option>
@@ -123,10 +122,10 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="store">Availability</label>
+                  <label for="store">Доступность</label>
                   <select class="form-control" id="availability" name="availability">
-                    <option value="1">Yes</option>
-                    <option value="2">No</option>
+                    <option value="1">Да</option>
+                    <option value="2">Нет</option>
                   </select>
                 </div>
 
@@ -134,8 +133,8 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('products/') ?>" class="btn btn-warning">Back</a>
+                <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                <a href="<?php echo base_url('products/') ?>" class="btn btn-warning">Назад</a>
               </div>
             </form>
           <!-- /.box-body -->
