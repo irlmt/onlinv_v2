@@ -5,12 +5,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Control panel</small>
+        Панель управления
+        <small>Главная</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+        <li class="active">Панель управления</li>
       </ol>
     </section>
 
@@ -26,12 +26,12 @@
               <div class="inner">
                 <h3><?php echo $total_products ?></h3>
 
-                <p>Total Products</p>
+                <p>Количество товаров</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="<?php echo base_url('products/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('products/') ?>" class="small-box-footer">Больше информации <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -41,12 +41,12 @@
               <div class="inner">
                 <h3><?php echo $total_paid_orders ?></h3>
 
-                <p>Total Paid Orders</p>
+                <p>Количество оплаченных чеков</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?php echo base_url('orders/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('orders/') ?>" class="small-box-footer">Больше информации <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -56,12 +56,12 @@
               <div class="inner">
                 <h3><?php echo $total_users; ?></h3>
 
-                <p>Total Users</p>
+                <p>Количество пользователей</p>
               </div>
               <div class="icon">
                 <i class="ion ion-android-people"></i>
               </div>
-              <a href="<?php echo base_url('users/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('users/') ?>" class="small-box-footer">Больше информации <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -71,12 +71,12 @@
               <div class="inner">
                 <h3><?php echo $total_stores ?></h3>
 
-                <p>Total Stores</p>
+                <p>Количество магазинов</p>
               </div>
               <div class="icon">
                 <i class="ion ion-android-home"></i>
               </div>
-              <a href="<?php echo base_url('stores/') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('stores/') ?>" class="small-box-footer">Больше информации <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
