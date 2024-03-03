@@ -5,11 +5,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Reports
+        Отчеты
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Reports</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+        <li class="active">Отчеты</li>
       </ol>
     </section>
 
@@ -21,14 +21,14 @@
         <div class="col-md-12 col-xs-12">
           <form class="form-inline" action="<?php echo base_url('reports/') ?>" method="POST">
             <div class="form-group">
-              <label for="date">Year</label>
+              <label for="date">Год</label>
               <select class="form-control" name="select_year" id="select_year">
                 <?php foreach ($report_years as $key => $value): ?>
                   <option value="<?php echo $value ?>" <?php if($value == $selected_year) { echo "selected"; } ?>><?php echo $value; ?></option>
                 <?php endforeach ?>
               </select>
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default">Подтвердить</button>
           </form>
         </div>
 
@@ -51,7 +51,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Total Parking - Report</h3>
+              <h3 class="box-title">Общий отчет</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -64,15 +64,15 @@
           <!-- /.box -->
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Total Paid Orders - Report Data</h3>
+              <h3 class="box-title">Общее число оплаченных чеков</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="datatables" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Month - Year</th>
-                  <th>Amount</th>
+                  <th>Месяц - Год</th>
+                  <th>Сумма</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -92,7 +92,7 @@
                 </tbody>
                 <tbody>
                   <tr>
-                    <th>Total Amount</th>
+                    <th>Общая сумма</th>
                     <th>
                       <?php //echo $company_currency . ' ' . array_sum($parking_data); ?>
                       <?php echo array_sum($results); ?>
@@ -130,7 +130,7 @@
      * Here we will create a few charts using ChartJS
      */
      var areaChartData = {
-      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+      labels  : ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
       datasets: [
         {
           label               : 'Electronics',

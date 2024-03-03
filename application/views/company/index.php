@@ -5,12 +5,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Manage
-        <small>Company</small>
+        Редактировать
+        <small>Информацию о компании</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">company</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+        <li class="active">Информация о компании</li>
       </ol>
     </section>
 
@@ -34,7 +34,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Manage Company Information</h3>
+              <h3 class="box-title">MРедактировать информацию о компании</h3>
             </div>
             <form role="form" action="<?php base_url('company/update') ?>" method="post">
               <div class="box-body">
@@ -42,40 +42,40 @@
                 <?php echo validation_errors(); ?>
 
                 <div class="form-group">
-                  <label for="company_name">Company Name</label>
-                  <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Enter company name" value="<?php echo $company_data['company_name'] ?>" autocomplete="off">
+                  <label for="company_name">Название компании</label>
+                  <input type="text" class="form-control" id="company_name" name="company_name" placeholder="Введите название компании" value="<?php echo $company_data['company_name'] ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="service_charge_value">Charge Amount (%)</label>
-                  <input type="text" class="form-control" id="service_charge_value" name="service_charge_value" placeholder="Enter charge amount %" value="<?php echo $company_data['service_charge_value'] ?>" autocomplete="off">
+                  <label for="service_charge_value">Налог (%)</label>
+                  <input type="text" class="form-control" id="service_charge_value" name="service_charge_value" placeholder="Введите налог %" value="<?php echo $company_data['service_charge_value'] ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="vat_charge_value">Vat Charge (%)</label>
-                  <input type="text" class="form-control" id="vat_charge_value" name="vat_charge_value" placeholder="Enter vat charge %" value="<?php echo $company_data['vat_charge_value'] ?>" autocomplete="off">
+                  <label for="vat_charge_value">НДС (%)</label>
+                  <input type="text" class="form-control" id="vat_charge_value" name="vat_charge_value" placeholder="Введите НДС %" value="<?php echo $company_data['vat_charge_value'] ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="address">Address</label>
-                  <input type="text" class="form-control" id="address" name="address" placeholder="Enter address" value="<?php echo $company_data['address'] ?>" autocomplete="off">
+                  <label for="address">Адрес</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Введите адрес" value="<?php echo $company_data['address'] ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter phone" value="<?php echo $company_data['phone'] ?>" autocomplete="off">
+                  <label for="phone">Номер телефона</label>
+                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Введите номер телефона" value="<?php echo $company_data['phone'] ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="country">Country</label>
-                  <input type="text" class="form-control" id="country" name="country" placeholder="Enter country" value="<?php echo $company_data['country'] ?>" autocomplete="off">
+                  <label for="country">Страна</label>
+                  <input type="text" class="form-control" id="country" name="country" placeholder="Введите страну" value="<?php echo $company_data['country'] ?>" autocomplete="off">
                 </div>
                 <div class="form-group">
-                  <label for="permission">Message</label>
+                  <label for="permission">Описание</label>
                   <textarea class="form-control" id="message" name="message">
                      <?php echo $company_data['message'] ?>
                   </textarea>
                 </div>
                 <div class="form-group">
-                  <label for="currency">Currency</label>
+                  <label for="currency">Валюта</label>
                   <?php ?>
                   <select class="form-control" id="currency" name="currency">
-                    <option value="">~~SELECT~~</option>
+                    <option value="">~~ВЫБЕРИТЕ~~</option>
 
                     <?php foreach ($currency_symbols as $k => $v): ?>
                       <option value="<?php echo trim($k); ?>" <?php if($company_data['currency'] == $k) {
@@ -89,7 +89,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="submit" class="btn btn-primary">Сохранить изменения</button>
               </div>
             </form>
           </div>

@@ -5,12 +5,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Manage
-        <small>Users</small>
+        Редактировать
+        <small>Пользователей</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Users</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+        <li class="active">Пользователи</li>
       </ol>
     </section>
 
@@ -34,7 +34,7 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Edit User</h3>
+              <h3 class="box-title">Редактировать пользователя</h3>
             </div>
             <form role="form" action="<?php base_url('users/create') ?>" method="post">
               <div class="box-body">
@@ -42,9 +42,9 @@
                 <?php echo validation_errors(); ?>
 
                 <div class="form-group">
-                  <label for="groups">Groups</label>
+                  <label for="groups">Группы</label>
                   <select class="form-control" id="groups" name="groups">
-                    <option value="">Select Groups</option>
+                    <option value="">Выберите группу</option>
                     <?php foreach ($group_data as $k => $v): ?>
                       <option value="<?php echo $v['id'] ?>" <?php if($user_group['id'] == $v['id']) { echo 'selected'; } ?> ><?php echo $v['group_name'] ?></option> 
                     <?php endforeach ?>
@@ -52,44 +52,44 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" class="form-control" id="username" name="username" placeholder="Username" value="<?php echo $user_data['username'] ?>" autocomplete="off">
+                  <label for="username">Имя пользователя</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="Имя пользователя" value="<?php echo $user_data['username'] ?>" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $user_data['email'] ?>" autocomplete="off">
+                  <label for="email">Эл. почта</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Эл. почта" value="<?php echo $user_data['email'] ?>" autocomplete="off">
                 </div>                
 
                 <div class="form-group">
-                  <label for="fname">First name</label>
-                  <input type="text" class="form-control" id="fname" name="fname" placeholder="First name" value="<?php echo $user_data['firstname'] ?>" autocomplete="off">
+                  <label for="fname">Имя</label>
+                  <input type="text" class="form-control" id="fname" name="fname" placeholder="Имя" value="<?php echo $user_data['firstname'] ?>" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                  <label for="lname">Last name</label>
-                  <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name" value="<?php echo $user_data['lastname'] ?>" autocomplete="off">
+                  <label for="lname">Фамилия</label>
+                  <input type="text" class="form-control" id="lname" name="lname" placeholder="Фамилия" value="<?php echo $user_data['lastname'] ?>" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                  <label for="phone">Phone</label>
-                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone" value="<?php echo $user_data['phone'] ?>" autocomplete="off">
+                  <label for="phone">Номер телефона</label>
+                  <input type="text" class="form-control" id="phone" name="phone" placeholder="Номер телефона" value="<?php echo $user_data['phone'] ?>" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                  <label for="gender">Gender</label>
+                  <label for="gender">Пол</label>
                   <div class="radio">
                     <label>
                       <input type="radio" name="gender" id="male" value="1" <?php if($user_data['gender'] == 1) {
                         echo "checked";
                       } ?>>
-                      Male
+                      Муж.
                     </label>
                     <label>
                       <input type="radio" name="gender" id="female" value="2" <?php if($user_data['gender'] == 2) {
                         echo "checked";
                       } ?>>
-                      Female
+                      Жен.
                     </label>
                   </div>
                 </div>
@@ -97,26 +97,26 @@
                 <div class="form-group">
                   <div class="alert alert-info alert-dismissible" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      Leave the password field empty if you don't want to change.
+                      Оставьте поле пароля пустым, если не хотите его менять.
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="text" class="form-control" id="password" name="password" placeholder="Password"  autocomplete="off">
+                  <label for="password">Пароль</label>
+                  <input type="text" class="form-control" id="password" name="password" placeholder="Пароль"  autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                  <label for="cpassword">Confirm password</label>
-                  <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" autocomplete="off">
+                  <label for="cpassword">Подтвердите пароль</label>
+                  <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Подтвердите пароль" autocomplete="off">
                 </div>
 
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="<?php echo base_url('users/') ?>" class="btn btn-warning">Back</a>
+                <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                <a href="<?php echo base_url('users/') ?>" class="btn btn-warning">Назад</a>
               </div>
             </form>
           </div>

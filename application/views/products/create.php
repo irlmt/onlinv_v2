@@ -5,12 +5,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Manage
-      <small>Products</small>
+      Редактировать 
+      <small>Товары</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Products</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+      <li class="active">Товары</li>
     </ol>
   </section>
 
@@ -37,7 +37,7 @@
 
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Add Product</h3>
+            <h3 class="box-title">Добавить товар</h3>
           </div>
           <!-- /.box-header -->
           <form role="form" action="<?php base_url('users/create') ?>" method="post" enctype="multipart/form-data">
@@ -47,7 +47,7 @@
 
                 <div class="form-group">
 
-                  <label for="product_image">Image</label>
+                  <label for="product_image">Изображение</label>
                   <div class="kv-avatar">
                       <div class="file-loading">
                           <input id="product_image" name="product_image" type="file">
@@ -56,8 +56,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="product_name">Product name</label>
-                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Enter product name" autocomplete="off"/>
+                  <label for="product_name">Наименование товара</label>
+                  <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Введите наименование товара" autocomplete="off"/>
                 </div>
 
                 <div class="form-group">
