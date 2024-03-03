@@ -50,7 +50,7 @@ class Model_orders extends CI_Model
     		'vat_charge' => ($this->input->post('vat_charge_value') > 0) ? $this->input->post('vat_charge_value') : 0,
     		'net_amount' => $this->input->post('net_amount_value'),
     		'discount' => $this->input->post('discount'),
-    		'paid_status' => 2,
+    		'paid_status' => 1,
     		'user_id' => $user_id
     	);
 

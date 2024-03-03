@@ -54,7 +54,7 @@ class Brands extends Admin_Controller
 				';
 			}				
 
-			$status = ($value['active'] == 1) ? '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>';
+			$status = ($value['active'] == 1) ? '<span class="label label-success">Доступно</span>' : '<span class="label label-warning">Недоступно</span>';
 
 			$result['data'][$key] = array(
 				$value['name'],
@@ -156,11 +156,11 @@ class Brands extends Admin_Controller
 	        	$update = $this->model_brands->update($data, $id);
 	        	if($update == true) {
 	        		$response['success'] = true;
-	        		$response['messages'] = 'Succesfully updated';
+	        		$response['messages'] = 'Успешно обновлено';
 	        	}
 	        	else {
 	        		$response['success'] = false;
-	        		$response['messages'] = 'Error in the database while updated the brand information';			
+	        		$response['messages'] = 'Ошибка в базе данных';			
 	        	}
 	        }
 	        else {

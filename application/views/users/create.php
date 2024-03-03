@@ -42,7 +42,7 @@
                 <?php echo validation_errors(); ?>
 
                 <div class="form-group">
-                  <label for="groups">Groups</label>
+                  <label for="groups">Группы</label>
                   <select class="form-control" id="groups" name="groups">
                     <option value="">Выбрать группу</option>
                     <?php foreach ($group_data as $k => $v): ?>

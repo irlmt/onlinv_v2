@@ -57,13 +57,16 @@ class Products extends Admin_Controller
 
 			$img = '<img src="'.base_url($value['image']).'" alt="'.$value['name'].'" class="img-circle" width="50" height="50" />';
 
-            $availability = ($value['availability'] == 1) ? '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>';
+            $availability = ($value['availability'] == 1) ? '<span class="label label-success">Доступно</span>' : '<span class="label label-warning">Недоступно</span>';
 
             $qty_status = '';
             if($value['qty'] <= 10) {
-                $qty_status = '<span class="label label-warning">Low !</span>';
+                $qty_status = '<span class="label label-warning">Мало !</span>';
+                if($value['qty'] <= 0) {
+                $qty_status = '<span class="label label-danger">Закончилось !</span>';
+                }
             } else if($value['qty'] <= 0) {
-                $qty_status = '<span class="label label-danger">Out of stock !</span>';
+                $qty_status = '<span class="label label-danger">ЗАкончилось !</span>';
             }
 
 
@@ -121,11 +124,11 @@ class Products extends Admin_Controller
 
         	$create = $this->model_products->create($data);
         	if($create == true) {
-        		$this->session->set_flashdata('success', 'Successfully created');
+        		$this->session->set_flashdata('success', 'Успешно добавлено');
         		redirect('products/', 'refresh');
         	}
         	else {
-        		$this->session->set_flashdata('errors', 'Error occurred!!');
+        		$this->session->set_flashdata('errors', 'Произошла ошибка!!');
         		redirect('products/create', 'refresh');
         	}
         }
@@ -233,11 +236,11 @@ class Products extends Admin_Controller
 
             $update = $this->model_products->update($data, $product_id);
             if($update == true) {
-                $this->session->set_flashdata('success', 'Successfully updated');
+                $this->session->set_flashdata('success', 'Успешно изменено');
                 redirect('products/', 'refresh');
             }
             else {
-                $this->session->set_flashdata('errors', 'Error occurred!!');
+                $this->session->set_flashdata('errors', 'Произошла ошибка!!');
                 redirect('products/update/'.$product_id, 'refresh');
             }
         }

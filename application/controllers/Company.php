@@ -51,11 +51,11 @@ class Company extends Admin_Controller
 
         	$update = $this->model_company->update($data, 1);
         	if($update == true) {
-        		$this->session->set_flashdata('success', 'Successfully created');
+        		$this->session->set_flashdata('success', 'Успешно добавлено');
         		redirect('company/', 'refresh');
         	}
         	else {
-        		$this->session->set_flashdata('errors', 'Error occurred!!');
+        		$this->session->set_flashdata('errors', 'Произошла ошибка!!');
         		redirect('company/index', 'refresh');
         	}
         }

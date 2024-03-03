@@ -5,12 +5,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Manage
-      <small>Category</small>
+      Редактировать
+      <small>Категории</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li class="active">Category</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Главная</a></li>
+      <li class="active">Категории</li>
     </ol>
   </section>
 
@@ -35,23 +35,23 @@
         <?php endif; ?>
 
         <?php if(in_array('createCategory', $user_permission)): ?>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Add Category</button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">Добавить категорию</button>
           <br /> <br />
         <?php endif; ?>
 
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Manage Categories</h3>
+            <h3 class="box-title">Редактировать категории</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
             <table id="manageTable" class="table table-bordered table-striped">
               <thead>
               <tr>
-                <th>Category Name</th>
-                <th>Status</th>
+                <th>Название категории</th>
+                <th>Статус</th>
                 <?php if(in_array('updateCategory', $user_permission) || in_array('deleteCategory', $user_permission)): ?>
-                  <th>Action</th>
+                  <th>Действие</th>
                 <?php endif; ?>
               </tr>
               </thead>
@@ -79,7 +79,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add Category</h4>
+        <h4 class="modal-title">Добавить категорию</h4>
       </div>
 
       <form role="form" action="<?php echo base_url('category/create') ?>" method="post" id="createForm">
@@ -87,21 +87,21 @@
         <div class="modal-body">
 
           <div class="form-group">
-            <label for="brand_name">Category Name</label>
-            <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Enter category name" autocomplete="off">
+            <label for="brand_name">Наименование категории</label>
+            <input type="text" class="form-control" id="category_name" name="category_name" placeholder="Введите наименование категории" autocomplete="off">
           </div>
           <div class="form-group">
-            <label for="active">Status</label>
+            <label for="active">Статус</label>
             <select class="form-control" id="active" name="active">
-              <option value="1">Active</option>
-              <option value="2">Inactive</option>
+              <option value="1">Доступно</option>
+              <option value="2">Недоступно</option>
             </select>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Сохранить изменения</button>
         </div>
 
       </form>
@@ -119,7 +119,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Edit Category</h4>
+        <h4 class="modal-title">Редактировать категории</h4>
       </div>
 
       <form role="form" action="<?php echo base_url('category/update') ?>" method="post" id="updateForm">
@@ -128,21 +128,21 @@
           <div id="messages"></div>
 
           <div class="form-group">
-            <label for="edit_brand_name">Category Name</label>
-            <input type="text" class="form-control" id="edit_category_name" name="edit_category_name" placeholder="Enter category name" autocomplete="off">
+            <label for="edit_brand_name">Наименование категории</label>
+            <input type="text" class="form-control" id="edit_category_name" name="edit_category_name" placeholder="Введите наименование категории" autocomplete="off">
           </div>
           <div class="form-group">
-            <label for="edit_active">Status</label>
+            <label for="edit_active">Статус</label>
             <select class="form-control" id="edit_active" name="edit_active">
-              <option value="1">Active</option>
-              <option value="2">Inactive</option>
+              <option value="1">Доступно</option>
+              <option value="2">Недоступно</option>
             </select>
           </div>
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+          <button type="submit" class="btn btn-primary">Сохранить изменения</button>
         </div>
 
       </form>
@@ -160,16 +160,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Remove Category</h4>
+        <h4 class="modal-title">Удалить категорию</h4>
       </div>
 
       <form role="form" action="<?php echo base_url('category/remove') ?>" method="post" id="removeForm">
         <div class="modal-body">
-          <p>Do you really want to remove?</p>
+          <p>Вы действительно хотите удалить?</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Отмена</button>
+          <button type="submit" class="btn btn-primary">Удалить</button>
         </div>
       </form>
 
