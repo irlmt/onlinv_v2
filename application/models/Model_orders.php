@@ -40,8 +40,8 @@ class Model_orders extends CI_Model
     	$data = array(
     		'bill_no' => $bill_no,
     		'customer_name' => $this->input->post('customer_name'),
-    		'customer_address' => $this->input->post('customer_address'),
-    		'customer_phone' => $this->input->post('customer_phone'),
+    		'customer_address' => "adr",
+    		'customer_phone' => "phn",
     		'date_time' => strtotime(date('Y-m-d h:i:s a')),
     		'gross_amount' => $this->input->post('gross_amount_value'),
     		'service_charge_rate' => $this->input->post('service_charge_rate'),
@@ -101,8 +101,8 @@ class Model_orders extends CI_Model
 
 			$data = array(
 				'customer_name' => $this->input->post('customer_name'),
-	    		'customer_address' => $this->input->post('customer_address'),
-	    		'customer_phone' => $this->input->post('customer_phone'),
+	    		'customer_address' => "adrUpd",
+	    		'customer_phone' => "phnUpd",
 	    		'gross_amount' => $this->input->post('gross_amount_value'),
 	    		'service_charge_rate' => $this->input->post('service_charge_rate'),
 	    		'service_charge' => ($this->input->post('service_charge_value') > 0) ? $this->input->post('service_charge_value'):0,

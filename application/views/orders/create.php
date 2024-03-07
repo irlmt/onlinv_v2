@@ -71,23 +71,13 @@
                 <div class="col-md-4 col-xs-12 pull pull-left">
 
                   <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Имя покупателя</label>
+                    <label for="customer_name" class="col-sm-5 control-label" style="text-align:left;">Способ оплаты</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_name" name="customer_name" placeholder="Введите имя покупателя" autocomplete="off" />
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Адрес покупателя</label>
-                    <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_address" name="customer_address" placeholder="Введите адрес покупателя" autocomplete="off">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label for="gross_amount" class="col-sm-5 control-label" style="text-align:left;">Номер покупателя</label>
-                    <div class="col-sm-7">
-                      <input type="text" class="form-control" id="customer_phone" name="customer_phone" placeholder="Введите номер покупателя" autocomplete="off">
+                      <select class="form-control" id="customer_name" name="customer_name">
+                        <option value="Перевод на моб. банк">Перевод на моб. банк</option>
+                        <option value="Картой">Картой</option>
+                        <option value="Наличными">Наличными</option>
+                      </select>
                     </div>
                   </div>
                 </div>

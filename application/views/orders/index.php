@@ -64,14 +64,14 @@
               <thead>
               <tr>
                 <th>Номер чека</th>
-                <th>Имя покупателя</th>
+                <th>Способ оплаты</th>
                 <th>Номер покупателя</th>
                 <th>Дата и время</th>
                 <th>Количество позиций</th>
                 <th>Общая сумма</th>
                 <th>Статус оплаты</th>
                 <?php if(in_array('updateOrder', $user_permission) || in_array('viewOrder', $user_permission) || in_array('deleteOrder', $user_permission)): ?>
-                  <th>Action</th>
+                  <th>Действие</th>
                 <?php endif; ?>
               </tr>
               </thead>
