@@ -133,6 +133,13 @@ $(document).ready(function() {
   manageTable = $('#manageTable').DataTable({
     'ajax': base_url + 'orders/fetchOrdersData',
     'order': [],
+    'columnDefs': [
+      {
+        'targets': 2, // Индекс удаляемого столбца (отрегулируйте по необходимости)
+        'visible': false,
+        'searchable': false
+      }
+    ],
     'language': {
         'url': 'https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json'
     }
