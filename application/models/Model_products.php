@@ -61,4 +61,17 @@ class Model_products extends CI_Model
 		return $query->num_rows();
 	}
 
+	public function getProductQuantity($product_id)
+    {
+        $this->db->select('quantity');
+        $this->db->where('id', $product_id);
+        $query = $this->db->get('products');
+
+        if ($query->num_rows() > 0) {
+            $row = $query->row();
+            return $row->quantity;
+        } else {
+            return 0; // или любое другое значение по умолчанию
+        }
+    }
 }

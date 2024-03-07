@@ -165,14 +165,42 @@ class Model_orders extends CI_Model
 
 	public function remove($id)
 	{
-		if($id) {
-			$this->db->where('id', $id);
-			$delete = $this->db->delete('orders');
+		if ($id) {
+			// Получаем информацию о товарах в чеке
+			$order_items = $this->getOrdersItemData($id);
 
-			$this->db->where('order_id', $id);
-			$delete_item = $this->db->delete('orders_item');
-			return ($delete == true && $delete_item) ? true : false;
+			// Удаляем чек
+			$this->db->where('id', $id);
+			$delete_order = $this->db->delete('orders');
+
+			if ($delete_order) {
+				// Если удаление чека прошло успешно, обновляем количество товаров
+				foreach ($order_items as $item) {
+					$product_id = $item['product_id'];
+					$quantity = $item['qty'];
+
+					// Получаем текущее количество товара
+					$product_data = $this->model_products->getProductData($product_id);
+					$current_quantity = (int)$product_data['qty'];
+
+					// Обновляем количество товара
+					$new_quantity = $current_quantity + $quantity;
+
+					// Обновляем информацию в базе данных
+					$update_product_data = array('qty' => $new_quantity);
+					$this->model_products->update($update_product_data, $product_id);
+				}
+
+				// Удаляем записи о товарах в чеке
+				$this->db->where('order_id', $id);
+				$delete_items = $this->db->delete('orders_item');
+
+				return $delete_items ? true : false;
+			} else {
+				return false;
+			}
 		}
+		return false;
 	}
 
 	public function countTotalPaidOrders()

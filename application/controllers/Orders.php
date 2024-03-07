@@ -215,32 +215,54 @@ class Orders extends Admin_Controller
 	* and it returns the response into the json format
 	*/
 	public function remove()
-	{
-		if(!in_array('deleteOrder', $this->permission)) {
-            redirect('dashboard', 'refresh');
-        }
+{
+    if (!in_array('deleteOrder', $this->permission)) {
+        redirect('dashboard', 'refresh');
+    }
 
-		$order_id = $this->input->post('order_id');
+    $order_id = $this->input->post('order_id');
 
-        $response = array();
-        if($order_id) {
-            $delete = $this->model_orders->remove($order_id);
-            if($delete == true) {
-                $response['success'] = true;
-                $response['messages'] = "Successfully removed"; 
+    $response = array();
+    if ($order_id) {
+        // Получаем детали заказа перед удалением
+        $order_data = $this->model_orders->getOrdersData($order_id);
+        $orders_items = $this->model_orders->getOrdersItemData($order_id);
+
+        // Удаляем заказ из базы данных
+        $delete = $this->model_orders->remove($order_id);
+
+        if ($delete == true) {
+            // Обновляем количество продуктов
+            foreach ($orders_items as $item) {
+                $this->updateProductQuantity($item['product_id'], $item['qty']);
             }
-            else {
-                $response['success'] = false;
-                $response['messages'] = "Error in the database while removing the product information";
-            }
-        }
-        else {
+
+            $response['success'] = true;
+            $response['messages'] = "Успешно удалено";
+        } else {
             $response['success'] = false;
-            $response['messages'] = "Refersh the page again!!";
+            $response['messages'] = "Ошибка в базе данных при удалении информации о продукте";
         }
+    } else {
+        $response['success'] = false;
+        $response['messages'] = "Обновите страницу снова!!";
+    }
 
-        echo json_encode($response); 
-	}
+    echo json_encode($response);
+}
+
+/*
+ * Обновляет количество продуктов в базе данных
+ */
+private function updateProductQuantity($product_id, $quantity)
+{
+	echo "Function is called";
+    $current_quantity = $this->model_products->getProductQuantity($product_id);
+    $new_quantity = $current_quantity + $quantity;
+
+    // Обновляем количество продукта в базе данных
+    $this->model_products->updateProductQuantity($product_id, $new_quantity);
+}
 
 	/*
 	* It gets the product id and fetch the order data. 
